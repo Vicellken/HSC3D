@@ -1,0 +1,7 @@
+README.md
+setup.py
+HSC3D.egg-info/PKG-INFO
+HSC3D.egg-info/SOURCES.txt
+HSC3D.egg-info/dependency_links.txt
+HSC3D.egg-info/requires.txt
+HSC3D.egg-info/top_level.txt

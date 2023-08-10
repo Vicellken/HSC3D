@@ -1,0 +1,8 @@
+# Usage: pip install -r requirements.txt
+
+# Base ----------------------------------------
+numpy
+alphashape
+matplotlib
+scikit-learn
+scipy

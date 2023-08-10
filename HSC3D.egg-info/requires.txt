@@ -1,0 +1,5 @@
+numpy
+alphashape
+matplotlib
+scikit-learn
+scipy

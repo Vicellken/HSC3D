@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: HSC3D
+Version: 0.1.0
+Summary: HSC3D: a Python package to quantify three-dimensional habitat structural complexity
+Home-page: https://github.com/Vicellken/HSC3D
+Author: Hu, Jiamian; Gu, Yi-Fei
+Author-email: guyf0601@connect.hku.hk
+License: MIT
+Project-URL: Bug Reports, https://github.com/Vicellken/HSC3D/issues
+Project-URL: Source, https://github.com/Vicellken/HSC3D
+Keywords: 3D point clouds,
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# HSC3D
+
+HSC3D: a Python package to quantify three-dimensional habitat structural complexity
+
+## Installation
+
+``pip install hsc3d`` to install the package or clone the code and install through ``pip intall -e .``
+
+## Usage
+
+See ``sample_usage.ipynb``
