@@ -12,7 +12,7 @@ VERSION = '0.1.0'
 setup(
     name='HSC3D',  # name of pypi package
     version=VERSION,  # version of pypi package
-    python_requires='>=3.10',
+    python_requires='>=3.6',
     license='MIT',
     description=('HSC3D: a Python package to quantify three-dimensional habitat structural complexity'),
     long_description=README,

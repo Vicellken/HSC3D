@@ -9,8 +9,10 @@ License: MIT
 Project-URL: Bug Reports, https://github.com/Vicellken/HSC3D/issues
 Project-URL: Source, https://github.com/Vicellken/HSC3D
 Keywords: 3D point clouds,
-Requires-Python: >=3.10
+Platform: UNKNOWN
+Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+License-File: License.md
 
 # HSC3D
 
@@ -23,3 +25,5 @@ HSC3D: a Python package to quantify three-dimensional habitat structural complex
 ## Usage
 
 See ``sample_usage.ipynb``
+
+

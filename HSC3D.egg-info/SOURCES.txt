@@ -1,4 +1,6 @@
+License.md
 README.md
+setup.cfg
 setup.py
 HSC3D.egg-info/PKG-INFO
 HSC3D.egg-info/SOURCES.txt
