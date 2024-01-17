@@ -1,11 +1,17 @@
 Metadata-Version: 2.1
 Name: HSC3D
-Version: 0.2.0
+Version: 0.2.2
 Summary: HSC3D: a Python package to quantify three-dimensional habitat structural complexity
 License: MIT
-Keywords: 3D point clouds, structural complexity
-Requires-Python: =3.10
+Keywords: 3D point clouds,structural complexity
+Requires-Python: >=3.10
 Description-Content-Type: text/markdown
+License-File: License.md
+Requires-Dist: numpy
+Requires-Dist: alphashape
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
 
 # HSC3D
 
