@@ -319,11 +319,11 @@ def compute_roughness(point_cloud):
                                 plane[0] * point_cloud[:, 0] + plane[1] * point_cloud[:, 1] + d)
 
     # Calculate the structural roughness as the RMS of the height differences to the fitted plane
-    structural_roughness = np.sqrt(np.mean(height_differences ** 2))
-    return plane, d, height_differences, structural_roughness
+    roughness = np.sqrt(np.mean(height_differences ** 2))
+    return plane, d, height_differences, roughness
 
 
-def plot_roughness(point_cloud, plane, d, height_differences, structural_roughness):
+def plot_roughness(point_cloud, plane, d, height_differences, roughness):
     fig, axs = plt.subplot_mosaic([['a', 'b'], ['c', 'd']], figsize=(15, 14), constrained_layout=True)
 
     for label, ax in axs.items():
@@ -357,7 +357,7 @@ def plot_roughness(point_cloud, plane, d, height_differences, structural_roughne
     z = (-plane[0] * x - plane[1] * y - d) / plane[2]
     ax.plot_surface(x, y, z, alpha=0.5, color='#8c000f')
     ax.set_title('Structural roughness: ' +
-                 str(round(structural_roughness, 4)), fontsize='x-large')
+                 str(round(roughness, 4)), fontsize='x-large')
     ax.view_init(elev=30, azim=-90, roll=0)
     
     # Third subplot
@@ -387,7 +387,7 @@ def plot_roughness(point_cloud, plane, d, height_differences, structural_roughne
     z = (-plane[0] * x - plane[1] * y - d) / plane[2]
     ax.plot_surface(x, y, z, alpha=0.5, color='#8c000f')
     # ax.set_title('Structural roughness: ' +
-    #                 str(round(structural_roughness, 4)))
+    #                 str(round(roughness, 4)))
     ax.view_init(elev=30, azim=0, roll=0)
     plt.savefig('roughness.png', dpi=600,
                 transparent=True, bbox_inches='tight')
@@ -534,7 +534,7 @@ def plot_gaussian_mixture(point_cloud, labels, dispersion, iteration):
     plt.savefig('gaussian_mixture.png', dpi=600, transparent=True)
 
 
-class structural_roughness:
+class roughness:
     def __init__(self, point_cloud) -> None:
         self.point_cloud = point_cloud
         self.plane, self.d, self.height_differences, self.roughness = compute_roughness(
@@ -605,7 +605,7 @@ class entropy:
             self.point_cloud, self.bins, self.base)
 
 
-class gaussian_mixture_model:
+class gmm:
     def __init__(self, point_cloud, n_components=3, covariance_type='full') -> None:
         self.point_cloud = point_cloud
         self.n_components = n_components
@@ -619,7 +619,7 @@ class gaussian_mixture_model:
     def re_compute(self, new_n_components, new_covariance_type):
         self.n_components = new_n_components
         self.covariance_type = new_covariance_type
-        self.gaussian_mixture_model, self.labels, self.dispersion = compute_gaussian_mixture(
+        self.gmm, self.labels, self.dispersion = compute_gaussian_mixture(
             self.point_cloud, self.n_components, self.covariance_type)
         pass
 
@@ -644,9 +644,9 @@ class HSC3D:
         self.entropy = entropy(self.point_cloud)
         print('Entropy computed as:', self.entropy.entropy_val)
         print('Computing structural roughness ...')
-        self.structural_roughness = structural_roughness(self.point_cloud)
+        self.roughness = roughness(self.point_cloud)
         print('Structural roughness computed as:',
-              self.structural_roughness.roughness)
+              self.roughness.roughness)
         print('Computing curvature ...')
         self.curvature = curvature(self.point_cloud)
         print('Curvature computed as:', self.curvature.mean_curvature)
@@ -660,9 +660,9 @@ class HSC3D:
         self.volume_all = volume_all(
             self.point_cloud, self.convex_hull, self.alpha_shape)
         print('Computing Gaussian mixture model...')
-        self.gaussian_mixture_model = gaussian_mixture_model(self.point_cloud)
+        self.gmm = gmm(self.point_cloud)
         print('Gaussian mixture model dispersion computed as:',
-              self.gaussian_mixture_model.dispersion)
+              self.gmm.dispersion)
         pass
 
 
