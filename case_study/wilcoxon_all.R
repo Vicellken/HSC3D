@@ -72,12 +72,12 @@ c <- ggboxplot(df,
 d <- ggboxplot(df,
   x = "object", y = "log_alpha",
   xlab = FALSE,
-  ylab = "log(Aplha shape)",
+  ylab = "log(Alpha shape)",
   palette = "npg", group = "object",
   color = "object", shape = "object",
   legend = "none", add = "jitter",
   add.params = list(size = 3)
-) + labs(title = "d. Aplha shape") +
+) + labs(title = "d. Alpha shape") +
   font("ylab", size = 20) +
   font("title", size = 20, face = "bold") +
   theme(axis.text = element_text(size = 20)) +
