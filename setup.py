@@ -10,18 +10,24 @@ REQUIREMENTS = [
     for x in pkg.parse_requirements((PARENT / "requirements.txt").read_text())
 ]
 
-VERSION = "0.2.2"
+VERSION = "0.2.3"
 
 setup(
     name="HSC3D",  # name of pypi package
     version=VERSION,  # version of pypi package
     python_requires=">=3.10",
-    license="MIT",
+    license="Creative Commons Attribution-NonCommercial",
     description=(
         "HSC3D: a Python package to quantify three-dimensional habitat structural complexity"
     ),
     long_description=README,
     long_description_content_type="text/markdown",
+    url='https://github.com/Vicellken/HSC3D',
+    project_urls={
+        'Bug Reports': 'https://github.com/Vicellken/HSC3D/issues',
+        'Source': 'https://github.com/Vicellken/HSC3D'},
+    author='Hu, Jiamian; Gu, Yi-Fei',
+    author_email='guyf0601@connect.hku.hk',
     packages=find_packages(),  # required
     include_package_data=True,
     install_requires=REQUIREMENTS,

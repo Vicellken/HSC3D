@@ -1,5 +1,7 @@
 License.md
+MANIFEST.in
 README.md
+requirements.txt
 setup.cfg
 setup.py
 HSC3D.egg-info/PKG-INFO
