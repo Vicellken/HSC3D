@@ -10,7 +10,7 @@ REQUIREMENTS = [
     for x in pkg.parse_requirements((PARENT / "requirements.txt").read_text())
 ]
 
-VERSION = "0.2.3"
+VERSION = "0.2.4"
 
 setup(
     name="HSC3D",  # name of pypi package
