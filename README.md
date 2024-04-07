@@ -36,7 +36,7 @@ Please cite the following paper if you use HSC3D in your research:
 ```
 Gu, Y.-F., Hu, J., Han, K., Lau, J. W. T., & Williams, G. A. (2024).
 HSC3D: A Python package to quantify three-dimensional habitat structural complexity.
-Methods in Ecology and Evolution, 00, 1–8.
+Methods in Ecology and Evolution, 15, 639–646.
 https://doi.org/10.1111/2041-210X.14305
 ```
 
