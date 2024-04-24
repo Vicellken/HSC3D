@@ -1,6 +1,6 @@
 # HSC3D
 
-HSC3D: a Python package to quantify three-dimensional habitat structural complexity
+HSC3D: A Python package to quantify three-dimensional habitat structural complexity
 
 ## Package workflow
 
